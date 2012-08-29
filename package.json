@@ -1,0 +1,34 @@
+{
+  "name": "next-tick",
+  "version": "0.1.0",
+  "description": "Cross environment nextTick polyfill",
+  "main": "lib/next-tick",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node node_modules/tad/bin/tad lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/next-tick.git"
+  },
+  "keywords": [
+    "nexttick",
+    "setImmediate",
+    "setTimeout",
+    "async"
+  ],
+  "bugs": {
+    "email": "medikoo+next-tick@medikoo.com",
+    "url": "https://github.com/medikoo/next-tick/issues"
+  },
+  "engines": {
+    "node": ">=0.4"
+  },
+  "devDependencies": {
+    "tad": "0.1.x"
+  },
+  "author": "Mariusz Nowak <medikoo+next-tick@medikoo.com> (http://www.medikoo.com/)",
+  "license": "MIT"
+}
