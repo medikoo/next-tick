@@ -3,8 +3,8 @@ node_js:
   - 0.8
   - 0.9
 
-before_script:
-  - ln -s ../ node_modules/next-tick
+before_install:
+  - mkdir next-tick/node_modules; ln -s ../ next-tick/node_modules/next-tick
 
 notifications:
   email:
