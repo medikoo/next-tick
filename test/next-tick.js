@@ -10,5 +10,5 @@ module.exports = function (t, a, d) {
 	setTimeout(function () {
 		a(invoked, true, "Run in next tick");
 		d();
-	}, 0);
+	}, 10);
 };
