@@ -4,7 +4,7 @@ node_js:
   - 0.9
 
 before_install:
-  - ln -s ../ next-tick/node_modules/next-tick
+  - ln -s ../ node_modules/next-tick
 
 notifications:
   email:
