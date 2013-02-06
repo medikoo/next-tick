@@ -12,7 +12,6 @@ jslint_medikoo.predef process, setImmediate, setTimeout
 
 jshint.laxcomma
 jshint.camelcase
-jshint.curly
 jshint.eqeqeq
 jshint.forin
 jshint.immed
