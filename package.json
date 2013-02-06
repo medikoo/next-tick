@@ -26,6 +26,9 @@
   "engines": {
     "node": ">=0.4"
   },
+  "dependencies": {
+    "es5-ext": "~0.9.1"
+  },
   "devDependencies": {
     "tad": "0.1.x"
   },
