@@ -8,6 +8,31 @@ module.exports = function (t, a, d) {
 	fn();
 	setTimeout(function () {
 		a(called, 1);
-		d();
+
+		called = 0;
+		fn = t(function () { ++called; }, 50);
+		fn();
+		fn();
+		fn();
+
+		setTimeout(function () {
+			fn();
+			fn();
+
+			setTimeout(function () {
+				fn();
+				fn();
+
+				setTimeout(function () {
+					fn();
+					fn();
+
+					setTimeout(function () {
+						a(called, 1);
+						d();
+					}, 70);
+				}, 30);
+			}, 30);
+		}, 30);
 	}, 10);
 };

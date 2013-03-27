@@ -6,9 +6,10 @@ es5
 
 jslint_medikoo.tabs
 jslint_medikoo.module
+jslint_medikoo.bitwise
 jslint_medikoo.nomen
 jslint_medikoo.plusplus
-jslint_medikoo.predef process, setImmediate, setTimeout
+jslint_medikoo.predef process, setImmediate, setTimeout, clearTimeout
 
 jshint.laxcomma
 jshint.camelcase
@@ -31,4 +32,4 @@ jshint.smarttabs
 jshint.eqnull
 jshint.expr
 
-jshint.global+ process, setImmediate, setTimeout
+jshint.global+ process, setImmediate, setTimeout, clearTimeout
