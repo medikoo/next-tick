@@ -2,6 +2,7 @@
   "name": "next-tick",
   "version": "0.1.0",
   "description": "Cross environment nextTick polyfill",
+  "author": "Mariusz Nowak <medykk@medikoo.com> (http://www.medikoo.com/)",
   "main": "lib/next-tick",
   "directories": {
     "test": "test"
@@ -27,11 +28,10 @@
     "node": ">=0.4"
   },
   "dependencies": {
-    "es5-ext": "~0.9.1"
+    "es5-ext": "git://github.com/medikoo/es5-ext"
   },
   "devDependencies": {
     "tad": "0.1.x"
   },
-  "author": "Mariusz Nowak <medikoo+next-tick@medikoo.com> (http://www.medikoo.com/)",
   "license": "MIT"
 }
