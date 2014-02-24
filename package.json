@@ -1,6 +1,6 @@
 {
   "name": "next-tick",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Cross environment nextTick polyfill",
   "author": "Mariusz Nowak <medykk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
@@ -20,8 +20,8 @@
   "scripts": {
     "test": "node node_modules/tad/bin/tad"
   },
-  "devDependencies": {
-    "es5-ext": "git://github.com/medikoo/es5-ext.git"
+  "dependencies": {
+    "es5-ext": "~0.9.2"
   },
   "devDependencies": {
     "tad": "~0.1.21"

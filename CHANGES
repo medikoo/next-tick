@@ -1,2 +1,9 @@
+v0.2.0  --  2014.02.24
+- Assure microtask resultion if MutationObserver is available (thanks @Raynos) #1
+- Unify validation of callback. TypeError is throw for any non callable input
+- Move main module from `lib` to root directory
+- Improve documentation
+- Remove Makefile (it's environment agnostic pacakge)
+
 v0.1.0  --  2012.08.29
 Initial
