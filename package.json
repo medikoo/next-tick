@@ -18,7 +18,7 @@
     "url": "https://github.com/medikoo/next-tick/issues"
   },
   "scripts": {
-    "test": "node node_modules/tad/bin/tad lib"
+    "test": "node node_modules/tad/bin/tad"
   },
   "devDependencies": {
     "tad": "~0.1.21"
