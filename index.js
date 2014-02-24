@@ -1,19 +1,18 @@
 'use strict';
 
-if ((typeof process !== 'undefined') && process &&
-		(typeof process.nextTick === 'function')) {
-
+module.exports = (function () {
 	// Node.js
-	module.exports = process.nextTick;
-
-} else if (typeof setImmediate === 'function') {
+	if ((typeof process !== 'undefined') && process &&
+			(typeof process.nextTick === 'function')) {
+		return process.nextTick;
+	}
 
 	// W3C Draft
 	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
-	module.exports = function (cb) { setImmediate(cb); };
-
-} else {
+	if (typeof setImmediate === 'function') {
+		return function (cb) { setImmediate(cb); };
+	}
 
 	// Wide available standard
-	module.exports = function (cb) { setTimeout(cb, 0); };
-}
+	return function (cb) { setTimeout(cb, 0); };
+}());
