@@ -1,10 +1,10 @@
-# nextTick
+# next-tick
 ## Environment agnostic nextTick polyfill
 
 To be used in environment agnostic modules that need nextTick functionality.
 
 - When run in Node.js `process.nextTick` is used
-- In modern browsers microtask kind resolution is guaranteed by `MutationObserver`
+- In modern browsers microtask resolution is guaranteed by `MutationObserver`
 - In other engines `setImmediate` or `setTimeout(fn, 0)` is used as fallback.
 - If none of the above is supported module resolves to `null`
 
