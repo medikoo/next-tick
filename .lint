@@ -11,4 +11,4 @@ ass
 bitwise
 nomen
 plusplus
-predef+ process, setImmediate, setTimeout, clearTimeout
+predef+ process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver
