@@ -14,5 +14,9 @@ module.exports = (function () {
 	}
 
 	// Wide available standard
-	return function (cb) { setTimeout(cb, 0); };
+	if (typeof setTimeout === 'function') {
+		return function (cb) { setTimeout(cb, 0); };
+	}
+
+	return null;
 }());
