@@ -1,6 +1,6 @@
 'use strict';
 
-var callable = require('es5-ext/lib/object/valid-callable')
+var callable = require('es5-ext/object/valid-callable')
 
   , byObserver;
 
