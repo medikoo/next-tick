@@ -1,8 +1,6 @@
 'use strict';
 
-var callable = require('es5-ext/object/valid-callable')
-
-  , byObserver;
+var byObserver;
 
 byObserver = function (Observer) {
 	var el = document.createElement('div'), queue;
@@ -18,7 +16,6 @@ byObserver = function (Observer) {
 		data.forEach(function (fn) { fn(); });
 	}).observe(el, { attributes: true });
 	return function (fn) {
-		callable(fn);
 		if (queue) {
 			if (typeof queue === 'function') queue = [queue, fn];
 			else queue.push(fn);
@@ -49,12 +46,12 @@ module.exports = (function () {
 	// W3C Draft
 	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
 	if (typeof setImmediate === 'function') {
-		return function (cb) { setImmediate(callable(cb)); };
+		return function (cb) { setImmediate(cb); };
 	}
 
 	// Wide available standard
 	if (typeof setTimeout === 'function') {
-		return function (cb) { setTimeout(callable(cb), 0); };
+		return function (cb) { setTimeout(cb, 0); };
 	}
 
 	return null;
