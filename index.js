@@ -5,7 +5,7 @@ var callable = require('es5-ext/object/valid-callable')
   , byObserver;
 
 byObserver = function (Observer) {
-	var el = document.createElement('div'), queue;
+	var node = document.createTextNode(''), queue, i = 0;
 	new Observer(function () {
 		var data;
 		if (!queue) return;
@@ -16,7 +16,7 @@ byObserver = function (Observer) {
 			return;
 		}
 		data.forEach(function (fn) { fn(); });
-	}).observe(el, { attributes: true });
+	}).observe(node, { characterData: true });
 	return function (fn) {
 		callable(fn);
 		if (queue) {
@@ -25,7 +25,7 @@ byObserver = function (Observer) {
 			return;
 		}
 		queue = fn;
-		el.setAttribute('x', 'y');
+		node.data = (i = ++i % 2);
 	};
 };
 
@@ -36,7 +36,7 @@ module.exports = (function () {
 		return process.nextTick;
 	}
 
-	// MutationObserver
+	// MutationObserver=
 	if ((typeof document === 'object') && document) {
 		if (typeof MutationObserver === 'function') {
 			return byObserver(MutationObserver);
