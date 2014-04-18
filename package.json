@@ -20,9 +20,6 @@
   "scripts": {
     "test": "node node_modules/tad/bin/tad"
   },
-  "dependencies": {
-    "es5-ext": "git://github.com/medikoo/es5-ext.git"
-  },
   "devDependencies": {
     "tad": "~0.1.21"
   },

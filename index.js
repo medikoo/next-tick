@@ -1,8 +1,11 @@
 'use strict';
 
-var callable = require('es5-ext/object/valid-callable')
+var callable, byObserver;
 
-  , byObserver;
+callable = function (fn) {
+	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
+	return fn;
+};
 
 byObserver = function (Observer) {
 	var node = document.createTextNode(''), queue, i = 0;
