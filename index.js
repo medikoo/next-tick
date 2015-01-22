@@ -34,7 +34,7 @@ byObserver = function (Observer) {
 
 module.exports = (function () {
 	// Node.js
-	if ((typeof process !== 'undefined') && process &&
+	if ((typeof process === 'object') && process &&
 			(typeof process.nextTick === 'function')) {
 		return process.nextTick;
 	}
