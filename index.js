@@ -39,7 +39,7 @@ module.exports = (function () {
 		return process.nextTick;
 	}
 
-	// MutationObserver=
+	// MutationObserver
 	if ((typeof document === 'object') && document) {
 		if (typeof MutationObserver === 'function') {
 			return byObserver(MutationObserver);
