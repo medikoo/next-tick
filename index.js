@@ -56,7 +56,7 @@ module.exports = (function () {
 	}
 
 	// Wide available standard
-	if (typeof setTimeout === 'function') {
+	if ((typeof setTimeout === 'function') || (typeof setTimeout === 'object')) {
 		return function (cb) { setTimeout(callable(cb), 0); };
 	}
 
