@@ -7,6 +7,7 @@ To be used in environment agnostic modules that need nextTick functionality.
 - In modern browsers microtask resolution is guaranteed by `MutationObserver`
 - In other engines `setImmediate` or `setTimeout(fn, 0)` is used as fallback.
 - If none of the above is supported module resolves to `null`
+- Returns a `cancel` function
 
 ## Installation
 ### NPM
