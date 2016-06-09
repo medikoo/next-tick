@@ -13,15 +13,15 @@
     "type": "git",
     "url": "git://github.com/medikoo/next-tick.git"
   },
-  "bugs": {
-    "email": "medikoo+next-tick@medikoo.com",
-    "url": "https://github.com/medikoo/next-tick/issues"
+  "devDependencies": {
+    "tad": "^0.2.4",
+    "xlint": "^0.2.2",
+    "xlint-jslint-medikoo": "^0.1.4"
   },
   "scripts": {
+    "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
+    "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
     "test": "node node_modules/tad/bin/tad"
-  },
-  "devDependencies": {
-    "tad": "^0.2.4"
   },
   "license": "MIT"
 }
