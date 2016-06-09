@@ -1,13 +1,11 @@
 'use strict';
 
-var callable, byObserver;
-
-callable = function (fn) {
+var callable = function (fn) {
 	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
 	return fn;
 };
 
-byObserver = function (Observer) {
+var byObserver = function (Observer) {
 	var node = document.createTextNode(''), queue, currentQueue, i = 0;
 	new Observer(function () {
 		var callback;
