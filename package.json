@@ -1,6 +1,6 @@
 {
   "name": "next-tick",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Environment agnostic nextTick polyfill",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
