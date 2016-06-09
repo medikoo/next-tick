@@ -17,7 +17,7 @@ In your project path:
 
 #### Browser
 
-You can easily bundle `next-tick` for browser with any CJS bundler, e.g. [modules-webmake](https://github.com/medikoo/modules-webmake)
+To port it to Browser or any other (non CJS) environment, use your favorite CJS bundler. No favorite yet? Try: [Browserify](http://browserify.org/), [Webmake](https://github.com/medikoo/modules-webmake) or [Webpack](http://webpack.github.io/)
 
 ## Tests [![Build Status](https://api.travis-ci.org/medikoo/next-tick.png?branch=master)](https://travis-ci.org/medikoo/next-tick)
 
