@@ -8,17 +8,29 @@ callable = function (fn) {
 };
 
 byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, i = 0;
+	var node = document.createTextNode(''), queue, currentQueue, i = 0;
 	new Observer(function () {
-		var data;
-		if (!queue) return;
-		data = queue;
+		var callback;
+		if (!queue) {
+			if (!currentQueue) return;
+			queue = currentQueue;
+		} else if (currentQueue) {
+			queue = currentQueue.concat(queue);
+		}
+		currentQueue = queue;
 		queue = null;
-		if (typeof data === 'function') {
-			data();
+		if (typeof currentQueue === 'function') {
+			callback = currentQueue;
+			currentQueue = null;
+			callback();
 			return;
 		}
-		data.forEach(function (fn) { fn(); });
+		node.data = (i = ++i % 2); // Invoke other batch, to handle leftover callbacks in case of crash
+		while (currentQueue) {
+			callback = currentQueue.shift();
+			if (!currentQueue.length) currentQueue = null;
+			callback();
+		}
 	}).observe(node, { characterData: true });
 	return function (fn) {
 		callable(fn);
