@@ -21,7 +21,7 @@
     "test": "node node_modules/tad/bin/tad"
   },
   "devDependencies": {
-    "tad": "~0.1.21"
+    "tad": "^0.2.4"
   },
   "license": "MIT"
 }
