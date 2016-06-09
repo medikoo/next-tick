@@ -46,19 +46,14 @@ byObserver = function (Observer) {
 
 module.exports = (function () {
 	// Node.js
-	if ((typeof process === 'object') && process &&
-			(typeof process.nextTick === 'function')) {
+	if ((typeof process === 'object') && process && (typeof process.nextTick === 'function')) {
 		return process.nextTick;
 	}
 
 	// MutationObserver
 	if ((typeof document === 'object') && document) {
-		if (typeof MutationObserver === 'function') {
-			return byObserver(MutationObserver);
-		}
-		if (typeof WebKitMutationObserver === 'function') {
-			return byObserver(WebKitMutationObserver);
-		}
+		if (typeof MutationObserver === 'function') return byObserver(MutationObserver);
+		if (typeof WebKitMutationObserver === 'function') return byObserver(WebKitMutationObserver);
 	}
 
 	// W3C Draft
