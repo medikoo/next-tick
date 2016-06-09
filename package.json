@@ -2,7 +2,7 @@
   "name": "next-tick",
   "version": "0.2.2",
   "description": "Environment agnostic nextTick polyfill",
-  "author": "Mariusz Nowak <medykk@medikoo.com> (http://www.medikoo.com/)",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
     "nexttick",
     "setImmediate",
