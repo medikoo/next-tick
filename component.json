@@ -1,0 +1,16 @@
+{
+  "name": "next-tick",
+  "repo": "medikoo/next-tick",
+  "version": "0.2.2",
+  "license": "MIT",
+  "description": "Environment agnostic nextTick polyfill",
+  "keywords": [
+    "nexttick",
+    "setImmediate",
+    "setTimeout",
+    "async"
+  ],
+  "scripts": [
+    "index.js"
+  ]
+}
