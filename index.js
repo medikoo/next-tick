@@ -50,15 +50,15 @@ module.exports = (function () {
 
 	// Promise
 	if ((typeof Promise === "function" && typeof Promise.prototype.then === "function")) {
-		var ua = typeof window !== 'undefined' && window.navigator.userAgent.toLowerCase();
-		var isIOS = ua && /iphone|ipad|ipod|ios/.test(ua);
-		var promise = Promise.resolve();
-        var logError = console.error.bind(console);
-        var noop = function(){};
+		var ua = typeof window !== 'undefined' && window.navigator.userAgent.toLowerCase(),
+			isIOS = ua && ((/iphone|ipad|ipod|ios/).test(ua)),
+			promise = Promise.resolve(),
+			logError = console.error.bind(console),
+			noop = function () {};
 		return function (cb) {
-			promise.then(cb).catch(logError)
+			promise.then(cb).catch(logError);
 			if (isIOS) setTimeout(noop);
-		}
+		};
 	}
 
 	// MutationObserver
