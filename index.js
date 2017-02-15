@@ -42,7 +42,21 @@ var byObserver = function (Observer) {
 	};
 };
 
-module.exports = (function () {
+module.exports = (function(basicNextTick){
+	function cancellableNextTick(fn){
+		var cancelled = false;
+		var cancel = function(){
+			cancelled = true;
+		};
+		basicNextTick(function(){
+			if (!cancelled){
+				fn();
+			}
+		});
+		return cancel;
+	}
+	return cancellableNextTick;
+})(function () {
 	// Node.js
 	if ((typeof process === 'object') && process && (typeof process.nextTick === 'function')) {
 		return process.nextTick;
