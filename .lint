@@ -13,4 +13,4 @@ nomen
 plusplus
 vars
 
-predef+ process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver
+predef+ window, Promise, console, process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver
