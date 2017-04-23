@@ -19,8 +19,8 @@
     "xlint-jslint-medikoo": "^0.1.4"
   },
   "scripts": {
-    "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
-    "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
+    "lint": "xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
+    "lint-console": "xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
     "test": "tad index.js"
   },
   "browser": "browser.js",
