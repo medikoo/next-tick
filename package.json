@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
     "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
-    "test": "node node_modules/tad/bin/tad"
+    "test": "tad index.js"
   },
   "browser": "browser.js",
   "license": "MIT"
