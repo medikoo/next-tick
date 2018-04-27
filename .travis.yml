@@ -11,4 +11,6 @@ notifications:
   email:
     - medikoo+next-tick@medikoo.com
 
-script: "npm test && npm run lint"
+script:
+  - npm run lint
+  - npm test
