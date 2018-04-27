@@ -10,10 +10,10 @@ notifications:
   email:
     - medikoo+next-tick@medikoo.com
 
+script: npm test
+
 jobs:
   include:
     - stage: lint
       node_js: 8
       script: npm run lint
-    - stage: test
-      script: npm test
