@@ -7,9 +7,6 @@ node_js:
   - 8
   - 10
 
-before_install:
-  - mkdir node_modules; ln -s ../ node_modules/next-tick
-
 notifications:
   email:
     - medikoo+next-tick@medikoo.com
