@@ -14,7 +14,7 @@
     "url": "git://github.com/medikoo/next-tick.git"
   },
   "devDependencies": {
-    "tad": "^0.2.4",
+    "tad": "^0.2.8",
     "xlint": "^0.2.2",
     "xlint-jslint-medikoo": "^0.1.4"
   },
