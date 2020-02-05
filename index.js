@@ -48,6 +48,11 @@ module.exports = (function () {
 		return process.nextTick;
 	}
 
+	// queueMicrotask
+	if (typeof queueMicrotask === "function") {
+		return function (cb) { queueMicrotask(ensureCallable(cb)) }
+	}
+
 	// MutationObserver
 	if ((typeof document === 'object') && document) {
 		if (typeof MutationObserver === 'function') return byObserver(MutationObserver);
