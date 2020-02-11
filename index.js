@@ -50,7 +50,7 @@ module.exports = (function () {
 
 	// queueMicrotask
 	if (typeof queueMicrotask === "function") {
-		return function (cb) { queueMicrotask(ensureCallable(cb)); }
+		return function (cb) { queueMicrotask(ensureCallable(cb)); };
 	}
 
 	// MutationObserver

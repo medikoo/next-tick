@@ -13,4 +13,4 @@ nomen
 plusplus
 vars
 
-predef+ process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver
+predef+ queueMicrotask, process, setImmediate, setTimeout, clearTimeout, document, MutationObserver, WebKitMutationObserver
