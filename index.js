@@ -6,27 +6,29 @@ var ensureCallable = function (fn) {
 };
 
 var byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, currentQueue, i = 0;
+	var node = document.createTextNode(''), queue, currentQueue, bit = 0, i = 0;
 	new Observer(function () {
 		var callback;
 		if (!queue) {
 			if (!currentQueue) return;
 			queue = currentQueue;
 		} else if (currentQueue) {
-			queue = currentQueue.concat(queue);
+			queue = currentQueue.slcie(i).concat(queue);
 		}
 		currentQueue = queue;
 		queue = null;
+		j = i;
 		if (typeof currentQueue === 'function') {
 			callback = currentQueue;
 			currentQueue = null;
 			callback();
 			return;
 		}
-		node.data = (i = ++i % 2); // Invoke other batch, to handle leftover callbacks in case of crash
-		while (currentQueue) {
-			callback = currentQueue.shift();
-			if (!currentQueue.length) currentQueue = null;
+		node.data = (bit = ++bit % 2); // Invoke other batch, to handle leftover callbacks in case of crash
+		while (i < currentQueue.length) {
+			callback = currentQueue[j];
+			i++
+			if (i === currentQueue.length) currentQueue = null;
 			callback();
 		}
 	}).observe(node, { characterData: true });
@@ -38,7 +40,7 @@ var byObserver = function (Observer) {
 			return;
 		}
 		queue = fn;
-		node.data = (i = ++i % 2);
+		node.data = (bit = ++bit % 2);
 	};
 };
 
