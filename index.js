@@ -13,7 +13,7 @@ var byObserver = function (Observer) {
 			if (!currentQueue) return;
 			queue = currentQueue;
 		} else if (currentQueue) {
-			queue = currentQueue.slcie(i).concat(queue);
+			queue = currentQueue.slice(i).concat(queue);
 		}
 		currentQueue = queue;
 		queue = null;
