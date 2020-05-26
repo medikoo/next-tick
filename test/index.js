@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (t, a, d) {
+exports['basics'] = function (t, a, d) {
 	var invoked;
 
 	a(t(function () {
@@ -20,3 +20,19 @@ module.exports = function (t, a, d) {
 		}, 10);
 	}, 10);
 };
+exports['nested'] = function (t, a, d) {
+	var invoked = [];
+	t(function () {
+		invoked.push(0);
+		t(function () {
+			invoked.push(1);
+			t(function () {
+				invoked.push(2);
+			});
+		});
+	});
+	setTimeout(function () {
+		a.deep(invoked, [0, 1, 2], "nested");
+		d();
+	}, 10);
+}

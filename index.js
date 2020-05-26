@@ -17,7 +17,7 @@ var byObserver = function (Observer) {
 		}
 		currentQueue = queue;
 		queue = null;
-		j = i;
+		i = 0;
 		if (typeof currentQueue === 'function') {
 			callback = currentQueue;
 			currentQueue = null;
@@ -26,8 +26,8 @@ var byObserver = function (Observer) {
 		}
 		node.data = (bit = ++bit % 2); // Invoke other batch, to handle leftover callbacks in case of crash
 		while (i < currentQueue.length) {
-			callback = currentQueue[j];
-			i++
+			callback = currentQueue[i];
+			i++;
 			if (i === currentQueue.length) currentQueue = null;
 			callback();
 		}
